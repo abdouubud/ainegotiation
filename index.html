@@ -59,10 +59,10 @@ h1,h2,h3{
   margin-bottom:14px;
 }
 
-.wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
-@media (max-width:640px){ .wrap{padding:0 20px;} }
-section{padding:64px 0;}
-@media (max-width:768px){ section{padding:40px 0;} }
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+@media (max-width:640px){ .wrap{padding:0 18px;} }
+section{padding:40px 0;}
+@media (max-width:768px){ section{padding:26px 0;} }
 .divider{border:none;border-top:1px solid var(--card-border);margin:0;}
 
 :focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
@@ -70,8 +70,9 @@ section{padding:64px 0;}
 /* Buttons */
 .btn{
   display:inline-flex;align-items:center;gap:8px;
-  font-family:'Press Start 2P',monospace;font-weight:400;font-size:.62rem;
-  padding:16px 22px;border-radius:100px;
+  font-family:'Archivo Black',sans-serif;font-weight:400;font-size:.78rem;
+  text-transform:uppercase;letter-spacing:.01em;
+  padding:15px 24px;border-radius:100px;
   text-decoration:none;border:none;cursor:pointer;
   transition:transform .15s ease, opacity .15s ease;
 }
@@ -88,41 +89,49 @@ section{padding:64px 0;}
 .nav-inner{max-width:var(--max);margin:0 auto;padding:14px 32px;}
 
 /* Hero */
-.hero{position:relative;overflow:hidden;padding:96px 0 84px;color:#fff;}
+.hero{position:relative;overflow:hidden;padding:36px 0 32px;color:var(--ink);}
 .hero-bg{position:absolute;inset:0;z-index:0;}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:62% 40%;}
-.hero-bg::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(100deg, rgba(17,17,17,.94) 0%, rgba(17,17,17,.86) 32%, rgba(17,17,17,.55) 58%, rgba(17,17,17,.22) 100%);
-}
 .hero-inner{position:relative;z-index:1;max-width:600px;}
 .hero-eyebrow{color:var(--orange);}
-.hero h1{font-family:'Press Start 2P',monospace;text-transform:uppercase;font-size:clamp(1.1rem,2.6vw,1.7rem);line-height:1.6;margin-bottom:20px;color:#fff;}
+.hero h1{font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:clamp(1.7rem,3.4vw,2.7rem);line-height:1.2;margin-bottom:12px;color:var(--ink);}
 .hero h1 .hl-orange{color:var(--orange);}
-.hero-sub{font-family:'Press Start 2P',monospace;text-transform:uppercase;font-size:clamp(1.1rem,2.6vw,1.7rem);line-height:1.6;margin-bottom:34px;color:#fff;}
+.hero-sub{font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:clamp(1.7rem,3.4vw,2.7rem);line-height:1.2;margin-bottom:24px;color:var(--ink);}
 .hero-ctas{display:flex;flex-wrap:nowrap;gap:14px;}
 @media (max-width:640px){ .hero-ctas{flex-wrap:wrap;} }
 
 /* Section head */
 .section-head h2{font-size:clamp(.95rem,1.8vw,1.4rem);line-height:1.7;margin-bottom:8px;color:var(--green);}
-.section-head{margin-bottom:32px;}
+.section-head{margin-bottom:20px;}
 h2{color:var(--green);}
 
 /* Issues */
+.slider-wrap{position:relative;}
 .quote-wall{
-  display:flex;gap:18px;margin-bottom:28px;
+  display:flex;gap:18px;margin-bottom:20px;
   overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 6px 18px;
   -webkit-overflow-scrolling:touch;scrollbar-width:thin;
 }
 .quote-card{
   background:var(--card-bg);border:1.5px solid var(--card-border);border-radius:18px;
-  padding:18px 20px;display:flex;flex-direction:row;align-items:center;gap:14px;
+  padding:16px 18px;display:flex;flex-direction:row;align-items:center;gap:14px;
   text-align:left;justify-content:flex-start;
-  flex:0 0 260px;scroll-snap-align:start;
+  flex:0 0 300px;scroll-snap-align:start;
 }
-.quote-card img{width:44px;height:44px;flex:0 0 auto;}
+.quote-card img{width:64px;height:64px;flex:0 0 auto;}
 .quote-card p{margin:0;font-size:1.05rem;font-weight:600;line-height:1.4;}
 .hl{font-weight:800;background:rgba(252,163,17,.35);padding:0 3px;border-radius:3px;}
+.slider-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:40px;height:40px;border-radius:50%;border:1.5px solid var(--card-border);
+  background:#fff;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;z-index:2;box-shadow:0 4px 10px rgba(17,17,17,.08);
+  font-size:1.1rem;color:var(--ink);
+}
+.slider-arrow:hover{background:var(--tint);}
+.slider-arrow.prev{left:-8px;}
+.slider-arrow.next{right:-8px;}
+@media (max-width:640px){ .slider-arrow{display:none;} }
 .reply-pill{
   display:flex;align-items:center;justify-content:center;gap:12px;
   background:#fff;border:1.5px solid var(--card-border);border-radius:100px;
@@ -132,18 +141,21 @@ h2{color:var(--green);}
 .reply-pill p{margin:0;font-weight:700;font-size:1.1rem;}
 
 /* Structural */
-.structural-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch;}
+.structural{padding-top:24px;padding-bottom:24px;}
+.structural .section-head h2{white-space:nowrap;}
+@media (max-width:700px){ .structural .section-head h2{white-space:normal;} }
+.structural-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:32px;align-items:stretch;}
 @media (max-width:900px){ .structural-grid{grid-template-columns:1fr;} }
-.icon-list{display:flex;flex-direction:column;gap:12px;}
+.icon-list{display:flex;flex-direction:column;gap:8px;}
 .icon-row-card{
-  display:flex;align-items:center;gap:16px;
+  display:flex;align-items:center;gap:14px;
   background:#fff;border:1.5px solid var(--card-border);border-radius:16px;
-  padding:14px 18px;flex:1;
+  padding:10px 16px;flex:1;
 }
-.icon-row-card img,.icon-row-card .ico-svg{width:30px;height:30px;flex:0 0 auto;}
+.icon-row-card img,.icon-row-card .ico-svg{width:28px;height:28px;flex:0 0 auto;}
 .icon-row-card .ico-svg{color:var(--ink);}
-.icon-row-card p{margin:0;font-size:.92rem;line-height:1.35;}
-.icon-row-card p b{display:block;font-weight:700;margin-bottom:2px;}
+.icon-row-card p{margin:0;font-size:.9rem;line-height:1.3;}
+.icon-row-card p b{display:block;font-weight:700;margin-bottom:1px;}
 .icon-row-card.highlight{background:#fff;border-color:var(--orange);border-width:2px;}
 .icon-row-card.highlight p b{color:var(--ink);}
 .chest-art{border-radius:18px;overflow:hidden;height:100%;background:var(--tint);display:flex;align-items:center;justify-content:center;}
@@ -269,14 +281,18 @@ h2{color:var(--green);}
     <div class="section-head reveal">
       <h2>The issues negotiators actually raise</h2>
     </div>
-    <div class="quote-wall reveal">
-      <div class="quote-card"><img src="assets/avatar_0.png" class="pixel-art" alt=""><p>I can never find <span class="hl">enough time</span> to prepare.</p></div>
-      <div class="quote-card"><img src="assets/avatar_1.png" class="pixel-art" alt=""><p>I <span class="hl">can't remember</span> what we agreed last time.</p></div>
-      <div class="quote-card"><img src="assets/avatar_2.png" class="pixel-art" alt=""><p>Finding information on past agreements in emails <span class="hl">takes too long</span>.</p></div>
-      <div class="quote-card"><img src="assets/avatar_3.png" class="pixel-art" alt=""><p>I have <span class="hl">too much data</span> and not enough time to analyze it.</p></div>
-      <div class="quote-card"><img src="assets/avatar_4.png" class="pixel-art" alt=""><p>We don't have a <span class="hl">clear methodology</span>.</p></div>
-      <div class="quote-card"><img src="assets/avatar_5.png" class="pixel-art" alt=""><p>My teams leave <span class="hl">value on the table</span> due to a lack of structure.</p></div>
-      <div class="quote-card"><img src="assets/avatar_0.png" class="pixel-art" alt=""><p>I would love to <span class="hl">automate the repetitive tasks</span> in my negotiations.</p></div>
+    <div class="slider-wrap">
+      <button class="slider-arrow prev" onclick="document.getElementById('issuesSlider').scrollBy({left:-320,behavior:'smooth'})" aria-label="Previous">←</button>
+      <div class="quote-wall reveal" id="issuesSlider">
+        <div class="quote-card"><img src="assets/avatar_0.png" class="pixel-art" alt=""><p>I can never find <span class="hl">enough time</span> to prepare.</p></div>
+        <div class="quote-card"><img src="assets/avatar_1.png" class="pixel-art" alt=""><p>I <span class="hl">can't remember</span> what we agreed last time.</p></div>
+        <div class="quote-card"><img src="assets/avatar_2.png" class="pixel-art" alt=""><p>Finding information on past agreements in emails <span class="hl">takes too long</span>.</p></div>
+        <div class="quote-card"><img src="assets/avatar_3.png" class="pixel-art" alt=""><p>I have <span class="hl">too much data</span> and not enough time to analyze it.</p></div>
+        <div class="quote-card"><img src="assets/avatar_4.png" class="pixel-art" alt=""><p>We don't have a <span class="hl">clear methodology</span>.</p></div>
+        <div class="quote-card"><img src="assets/avatar_5.png" class="pixel-art" alt=""><p>My teams leave <span class="hl">value on the table</span> due to a lack of structure.</p></div>
+        <div class="quote-card"><img src="assets/avatar_0.png" class="pixel-art" alt=""><p>I would love to <span class="hl">automate the repetitive tasks</span> in my negotiations.</p></div>
+      </div>
+      <button class="slider-arrow next" onclick="document.getElementById('issuesSlider').scrollBy({left:320,behavior:'smooth'})" aria-label="Next">→</button>
     </div>
     <div class="reply-pill reveal">
       <img src="assets/icon_heart.png" class="pixel-art" alt="">
@@ -290,7 +306,7 @@ h2{color:var(--green);}
 <section class="structural">
   <div class="wrap">
     <div class="section-head reveal">
-      <h2>The real limit is not the talent, but the structure</h2>
+      <h2>3. The limit is not the talent, but the structure</h2>
     </div>
     <div class="structural-grid reveal">
       <div class="icon-list">

@@ -152,7 +152,7 @@ h2{color:var(--green);}
   background:#fff;border:1.5px solid var(--card-border);border-radius:16px;
   padding:10px 16px;flex:1;
 }
-.icon-row-card img,.icon-row-card .ico-svg{width:40px;height:40px;flex:0 0 auto;}
+.icon-row-card img,.icon-row-card .ico-svg{width:40px;height:40px;flex:0 0 auto;object-fit:contain;}
 .icon-row-card .ico-svg{color:var(--ink);}
 .icon-row-card p{margin:0;font-size:.9rem;line-height:1.3;}
 .icon-row-card p b{display:block;font-weight:700;margin-bottom:1px;}
@@ -218,7 +218,7 @@ h2{color:var(--green);}
 .agentic-callout p{margin:0;font-weight:700;font-size:1.05rem;line-height:1.45;}
 
 /* Ladder */
-.ladder-intro{max-width:900px;color:var(--ink-soft);font-size:1rem;margin:0 0 32px;}
+.ladder-intro{max-width:1200px;color:var(--ink-soft);font-size:1rem;margin:0 0 32px;}
 .ladder-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:start;}
 @media (max-width:900px){ .ladder-grid{grid-template-columns:1fr;} }
 .ladder-table{width:100%;border-collapse:collapse;margin-bottom:24px;}
@@ -227,8 +227,8 @@ h2{color:var(--green);}
   font-size:.78rem;letter-spacing:.03em;text-align:left;padding:10px 12px;border-bottom:2px solid var(--card-border);
 }
 .ladder-table td{padding:14px 12px;border-bottom:1px solid var(--card-border);vertical-align:middle;}
-.ladder-table td.badge-cell{width:44px;}
-.ladder-table td.badge-cell img{width:32px;height:32px;object-fit:contain;}
+.ladder-table td.badge-cell{width:52px;}
+.ladder-table td.badge-cell img{width:42px;height:42px;object-fit:contain;}
 .ladder-table td.title-cell{white-space:nowrap;font-weight:700;font-size:.98rem;}
 .ladder-table td.desc-cell{font-size:.92rem;color:var(--ink-soft);}
 @media (max-width:640px){
@@ -248,6 +248,11 @@ h2{color:var(--green);}
 .losing-grid{display:grid;grid-template-columns:.7fr 1.6fr .7fr;gap:24px;align-items:center;margin-bottom:28px;}
 @media (max-width:900px){ .losing-grid{grid-template-columns:1fr;} }
 .losing-art img{width:100%;}
+.losing-caption{
+  font-family:'Inter',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.02em;
+  text-align:center;color:var(--ink);margin-bottom:10px;line-height:1.4;
+}
+.losing-caption.eyebrow-style{color:var(--green);text-transform:uppercase;font-size:.78rem;}
 .losing-card{
   background:#fff;border:1.5px solid var(--card-border);border-radius:20px;padding:28px 26px;
 }
@@ -260,8 +265,10 @@ h2{color:var(--green);}
   font-family:'Inter',sans-serif;font-weight:700;font-size:.8rem;
   display:flex;align-items:center;justify-content:center;margin-top:2px;
 }
-.reasons b{display:block;font-size:.95rem;margin-bottom:2px;}
-.reasons span{font-size:.86rem;color:var(--ink-soft);}
+.reasons b{font-size:.95rem;}
+.reasons span{font-size:.95rem;color:var(--ink-soft);}
+.reasons-closing{margin-top:16px;font-size:.95rem;line-height:1.5;}
+.reasons-closing i{color:var(--ink-soft);}
 .closing-pill{
   display:flex;align-items:center;gap:14px;background:#fff;border:1.5px solid var(--card-border);
   border-radius:18px;padding:22px 26px;
@@ -290,7 +297,7 @@ h2{color:var(--green);}
 .about-text p{margin:0;font-size:.98rem;color:var(--ink-soft);}
 .about-stat{display:flex;align-items:baseline;gap:10px;}
 .about-stat .num{font-family:'Press Start 2P',monospace;font-weight:400;font-size:1.8rem;}
-.about-stat .lbl{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--green);max-width:8ch;line-height:1.4;text-transform:uppercase;font-weight:700;letter-spacing:.02em;}
+.about-stat .lbl{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--green);line-height:1.4;text-transform:uppercase;font-weight:700;letter-spacing:.02em;white-space:nowrap;}
 @media (max-width:700px){ .about-inner{flex-direction:column;align-items:flex-start;} }
 </style>
 </head>
@@ -335,8 +342,8 @@ h2{color:var(--green);}
       </div>
       <button class="slider-arrow next" onclick="document.getElementById('issuesSlider').scrollBy({left:320,behavior:'smooth'})" aria-label="Next">→</button>
     </div>
-    <div class="reply-pill reveal">
-      <img src="assets/icon_heart.png" class="pixel-art" alt="">
+    <div class="agentic-callout reveal">
+      <img src="assets/icon_star.png" class="pixel-art" alt="">
       <p>Sound familiar? You're not alone — and it's not a talent problem.</p>
     </div>
   </div>
@@ -391,12 +398,12 @@ h2{color:var(--green);}
 <section class="agentic">
   <div class="wrap">
     <div class="section-head reveal">
-      <h2>3. AI: the game changer</h2>
+      <h2>3. The game changer! From generative AI to Agentic AI</h2>
     </div>
     <div class="agentic-grid reveal">
       <div class="agentic-card">
         <span class="agentic-dot"></span>
-        <p><b>From generative AI to agentic AI.</b><br><b>Generative AI responds:</b> you prompt it, it produces text, code, or analysis, then it stops.</p>
+        <p><b>Generative AI responds:</b> you prompt it, it produces text, code, or analysis, then it stops.</p>
       </div>
       <div class="agentic-card">
         <span class="agentic-dot"></span>
@@ -447,7 +454,7 @@ h2{color:var(--green);}
 <section class="ladder">
   <div class="wrap">
     <div class="section-head reveal">
-      <h2>4. Where does your team stand on the AI maturity ladder?</h2>
+      <h2>4. Where do you stand on the AI maturity ladder?</h2>
       <p class="ladder-intro">There are basically six levels, to AI adoption: from simple prompting to team intelligence. Most teams sit between level 1 and 3 — rarely from lack of ambition, but from lack of a method to climb. The real value starts at level 3.</p>
     </div>
     <div class="ladder-grid">
@@ -455,16 +462,16 @@ h2{color:var(--green);}
         <table class="ladder-table reveal">
           <thead><tr><th>Level</th><th>What it means</th></tr></thead>
           <tbody>
-            <tr><td class="badge-cell"><img src="assets/badge_1.png" class="pixel-art" alt="1"></td><td class="title-cell">Prompt engineering</td><td class="desc-cell">Knowing how to ask AI the right way.</td></tr>
-            <tr><td class="badge-cell"><img src="assets/badge_2.png" class="pixel-art" alt="2"></td><td class="title-cell">Context engineering</td><td class="desc-cell">Giving AI memory so it doesn't start from zero.</td></tr>
-            <tr><td class="badge-cell"><img src="assets/badge_3.png" class="pixel-art" alt="3"></td><td class="title-cell">Automation</td><td class="desc-cell">Fixed-rule tasks run without you.</td></tr>
-            <tr><td class="badge-cell"><img src="assets/badge_4.png" class="pixel-art" alt="4"></td><td class="title-cell">Agents</td><td class="desc-cell">AI adapts and chains actions toward a goal.</td></tr>
-            <tr><td class="badge-cell"><img src="assets/badge_5.png" class="pixel-art" alt="5"></td><td class="title-cell">Multi-agents</td><td class="desc-cell">Specialized agents coordinate on complex deals.</td></tr>
             <tr><td class="badge-cell"><img src="assets/badge_6.png" class="pixel-art" alt="6"></td><td class="title-cell">Team intelligence</td><td class="desc-cell">A shared brain that learns from every negotiation, for every negotiator.</td></tr>
+            <tr><td class="badge-cell"><img src="assets/badge_5.png" class="pixel-art" alt="5"></td><td class="title-cell">Multi-agents</td><td class="desc-cell">Specialized agents coordinate on complex deals.</td></tr>
+            <tr><td class="badge-cell"><img src="assets/badge_4.png" class="pixel-art" alt="4"></td><td class="title-cell">Agents</td><td class="desc-cell">AI adapts and chains actions toward a goal.</td></tr>
+            <tr><td class="badge-cell"><img src="assets/badge_3.png" class="pixel-art" alt="3"></td><td class="title-cell">Automation</td><td class="desc-cell">Fixed-rule tasks run without you.</td></tr>
+            <tr><td class="badge-cell"><img src="assets/badge_2.png" class="pixel-art" alt="2"></td><td class="title-cell">Context engineering</td><td class="desc-cell">Giving AI memory so it doesn't start from zero.</td></tr>
+            <tr><td class="badge-cell"><img src="assets/badge_1.png" class="pixel-art" alt="1"></td><td class="title-cell">Prompt engineering</td><td class="desc-cell">Knowing how to ask AI the right way.</td></tr>
           </tbody>
         </table>
-        <div class="reality-pill reveal">
-          <img src="assets/icon_shield.png" class="pixel-art" alt="">
+        <div class="agentic-callout reveal">
+          <img src="assets/icon_star.png" class="pixel-art" alt="">
           <p>Your clients, your suppliers, your competitors — are already moving fast. Do you? This isn't a someday bet anymore. The window is measured in months.</p>
         </div>
       </div>
@@ -480,17 +487,24 @@ h2{color:var(--green);}
 <section class="losing">
   <div class="wrap">
     <div class="losing-grid reveal">
-      <div class="losing-art"><img src="assets/crop_char_coins.png" alt="A character standing on a floating platform with coins falling beside it"></div>
+      <div class="losing-art">
+        <p class="losing-caption">The best time to build a negotiation edge was before your last deal.<br>The second best time is now.</p>
+        <img src="assets/crop_char_coins.png" alt="A character standing on a floating platform with coins falling beside it">
+      </div>
       <div class="losing-card">
         <h2>5. Every deal you wait quietly leaks value — the time is now</h2>
         <span class="sub-label">Three reasons not to wait</span>
         <ul class="reasons">
-          <li><span class="n">1</span><div><b>The technology just crossed the threshold</b><span>Autonomous agents are production-ready today, not a future bet.</span></div></li>
-          <li><span class="n">2</span><div><b>Your competitors, clients and suppliers are already moving</b><span>Early movers set the new baseline.</span></div></li>
-          <li><span class="n">3</span><div><b>The cost of waiting is invisible but real</b><span>Every unassisted negotiation leaves value on the table you never recover.</span></div></li>
+          <li><span class="n">1</span><div><b>The technology just crossed the threshold</b> — <span>autonomous agents are production-ready today, not a future bet.</span></div></li>
+          <li><span class="n">2</span><div><b>Your competitors, clients and suppliers are already moving</b> — <span>early movers set the new baseline.</span></div></li>
+          <li><span class="n">3</span><div><b>The cost of waiting is invisible but real</b> — <span>every unassisted negotiation leaves value on the table you never recover.</span></div></li>
         </ul>
+        <p class="reasons-closing"><b>Closing line:</b> <i>The best time to build a negotiation edge was before your last deal. The second best time is now.</i></p>
       </div>
-      <div class="losing-art"><img src="assets/crop_hourglass.png" alt="An hourglass with sand running out"></div>
+      <div class="losing-art">
+        <p class="losing-caption eyebrow-style">Why you act now</p>
+        <img src="assets/crop_hourglass.png" alt="An hourglass with sand running out">
+      </div>
     </div>
     <div class="closing-pill reveal">
       <img src="assets/icon_star.png" class="pixel-art" alt="">
@@ -516,12 +530,12 @@ h2{color:var(--green);}
         </div>
         <div class="cta-perk">
           <img src="assets/icon_target.png" class="pixel-art" alt="">
-          <p>Leave with practical next steps you can use immediately.</p>
+          <p><b>Quick wins</b>Leave with practical next steps you can use immediately.</p>
         </div>
       </div>
       <div class="cta-actions">
         <a href="https://assessement.wenego.fr/" class="btn btn-primary">Take the AI diagnostic</a>
-        <a href="https://www.wenego.fr/" target="_blank" rel="noopener" class="btn btn-secondary on-light">Book a call on wenego.fr</a>
+        <a href="https://www.wenego.fr/" target="_blank" rel="noopener" class="btn btn-secondary on-light">Book a discovery call</a>
       </div>
     </div>
     <div class="castle-art reveal"><img src="assets/castle-new.png" alt="A pixel-art castle on a hill with a red flag"></div>

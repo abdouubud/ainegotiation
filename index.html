@@ -86,7 +86,14 @@ section{padding:40px 0;}
 
 /* Nav */
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--card-border);}
-.nav-inner{max-width:var(--max);margin:0 auto;padding:14px 32px;}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:14px 32px;display:flex;justify-content:flex-end;}
+.lang-switch{display:flex;gap:4px;background:var(--tint);border-radius:100px;padding:4px;}
+.lang-btn{
+  font-family:'Inter',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.02em;
+  border:none;background:transparent;color:var(--ink-soft);padding:6px 14px;border-radius:100px;
+  cursor:pointer;transition:background .15s ease,color .15s ease;
+}
+.lang-btn.active{background:var(--green);color:#fff;}
 
 /* Hero */
 .hero{position:relative;overflow:hidden;padding:36px 0 32px;color:var(--ink);}
@@ -303,7 +310,14 @@ h2{color:var(--green);}
 </head>
 <body>
 
-<nav class="nav"><div class="nav-inner"></div></nav>
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="lang-switch">
+      <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
+    </div>
+  </div>
+</nav>
 
 <!-- 1 HERO -->
 <header class="hero">
@@ -312,11 +326,11 @@ h2{color:var(--green);}
   </div>
   <div class="wrap">
     <div class="hero-inner">
-      <h1>Your negotiators<br>are leaving <span class="hl-orange">money</span><br>on the table.</h1>
-      <p class="hero-sub">AI can help you capture it back.</p>
+      <h1 data-i18n="hero-h1">Your negotiators<br>are leaving <span class="hl-orange">money</span><br>on the table.</h1>
+      <p class="hero-sub" data-i18n="hero-sub">AI can help you capture it back.</p>
       <div class="hero-ctas">
-        <a href="https://assessement.wenego.fr/" class="btn btn-primary">Take the AI diagnostic</a>
-        <a href="https://contact-us.wenego.fr/" class="btn btn-secondary">Book a discovery call</a>
+        <a href="https://assessement.wenego.fr/" class="btn btn-primary" data-i18n="btn-diagnostic">Take the AI diagnostic</a>
+        <a href="https://contact-us.wenego.fr/" class="btn btn-secondary" data-i18n="btn-discovery">Book a discovery call</a>
       </div>
     </div>
   </div>
@@ -327,24 +341,24 @@ h2{color:var(--green);}
 <section class="issues">
   <div class="wrap">
     <div class="section-head reveal">
-      <h2>1. The issues negotiators actually raise</h2>
+      <h2 data-i18n="h2-issues">1. The issues negotiators actually raise</h2>
     </div>
     <div class="slider-wrap">
       <button class="slider-arrow prev" onclick="document.getElementById('issuesSlider').scrollBy({left:-320,behavior:'smooth'})" aria-label="Previous">←</button>
       <div class="quote-wall reveal" id="issuesSlider">
-        <div class="quote-card"><img src="assets/avatar_new_1.png" class="pixel-art" alt=""><p>I can never find <span class="hl">enough time</span> to prepare.</p></div>
-        <div class="quote-card"><img src="assets/avatar_new_2.png" class="pixel-art" alt=""><p>I <span class="hl">can't remember</span> what we agreed last time.</p></div>
-        <div class="quote-card"><img src="assets/avatar_new_3.png" class="pixel-art" alt=""><p>Finding information in emails <span class="hl">takes too long</span>.</p></div>
-        <div class="quote-card"><img src="assets/avatar_new_4.png" class="pixel-art" alt=""><p>I have <span class="hl">too much data</span> and not enough time to analyze it.</p></div>
-        <div class="quote-card"><img src="assets/avatar_new_5.png" class="pixel-art" alt=""><p>We don't have a <span class="hl">clear methodology</span>.</p></div>
-        <div class="quote-card"><img src="assets/avatar_new_6.png" class="pixel-art" alt=""><p>My teams leave <span class="hl">value on the table</span> due to a lack of structure.</p></div>
-        <div class="quote-card"><img src="assets/avatar_new_7.png" class="pixel-art" alt=""><p>I would love to <span class="hl">automate the repetitive tasks</span> in my negotiations.</p></div>
+        <div class="quote-card"><img src="assets/avatar_new_1.png" class="pixel-art" alt=""><p data-i18n="q1">I can never find <span class="hl">enough time</span> to prepare.</p></div>
+        <div class="quote-card"><img src="assets/avatar_new_2.png" class="pixel-art" alt=""><p data-i18n="q2">I <span class="hl">can't remember</span> what we agreed last time.</p></div>
+        <div class="quote-card"><img src="assets/avatar_new_3.png" class="pixel-art" alt=""><p data-i18n="q3">Finding information in emails <span class="hl">takes too long</span>.</p></div>
+        <div class="quote-card"><img src="assets/avatar_new_4.png" class="pixel-art" alt=""><p data-i18n="q4">I have <span class="hl">too much data</span> and not enough time to analyze it.</p></div>
+        <div class="quote-card"><img src="assets/avatar_new_5.png" class="pixel-art" alt=""><p data-i18n="q5">We don't have a <span class="hl">clear methodology</span>.</p></div>
+        <div class="quote-card"><img src="assets/avatar_new_6.png" class="pixel-art" alt=""><p data-i18n="q6">My teams leave <span class="hl">value on the table</span> due to a lack of structure.</p></div>
+        <div class="quote-card"><img src="assets/avatar_new_7.png" class="pixel-art" alt=""><p data-i18n="q7">I would love to <span class="hl">automate the repetitive tasks</span> in my negotiations.</p></div>
       </div>
       <button class="slider-arrow next" onclick="document.getElementById('issuesSlider').scrollBy({left:320,behavior:'smooth'})" aria-label="Next">→</button>
     </div>
     <div class="agentic-callout reveal">
       <img src="assets/icon_star.png" class="pixel-art" alt="">
-      <p>Sound familiar? You're not alone — and it's not a talent problem.</p>
+      <p data-i18n="sound-familiar">Sound familiar? You're not alone — and it's not a talent problem.</p>
     </div>
   </div>
 </section>
@@ -354,33 +368,33 @@ h2{color:var(--green);}
 <section class="structural">
   <div class="wrap">
     <div class="section-head reveal">
-      <h2>2. The limit is not the talent, but the structure</h2>
+      <h2 data-i18n="h2-structural">2. The limit is not the talent, but the structure</h2>
     </div>
     <div class="structural-grid reveal">
       <div class="icon-list">
         <div class="icon-row-card">
           <img src="assets/icon_clock.png" class="pixel-art" alt="">
-          <p><b>Preparation is bounded by time</b>Deep prep on counterpart, market, BATNA takes hours negotiators rarely have.</p>
+          <p data-i18n="c1"><b>Preparation is bounded by time</b>Deep prep on counterpart, market, BATNA takes hours negotiators rarely have.</p>
         </div>
         <div class="icon-row-card">
           <img src="assets/icon_gem.png" class="pixel-art" alt="">
-          <p><b>Information asymmetry is permanent</b>The other side often knows more than you do.</p>
+          <p data-i18n="c2"><b>Information asymmetry is permanent</b>The other side often knows more than you do.</p>
         </div>
         <div class="icon-row-card">
           <img src="assets/icon_bolt_new.png" class="pixel-art" alt="">
-          <p><b>Cognitive load peaks exactly when it matters</b>Strategy, tactics, emotion and math, all at once, live.</p>
+          <p data-i18n="c3"><b>Cognitive load peaks exactly when it matters</b>Strategy, tactics, emotion and math, all at once, live.</p>
         </div>
         <div class="icon-row-card">
           <img src="assets/icon_trophy_new.png" class="pixel-art" alt="">
-          <p><b>Team coordination is hard</b>Alignment either doesn't happen, or costs endless status meetings.</p>
+          <p data-i18n="c4"><b>Team coordination is hard</b>Alignment either doesn't happen, or costs endless status meetings.</p>
         </div>
         <div class="icon-row-card">
           <img src="assets/icon_book.png" class="pixel-art" alt="">
-          <p><b>Learning rarely compounds</b>No structured debrief means hard-won lessons stay in one person's head.</p>
+          <p data-i18n="c5"><b>Learning rarely compounds</b>No structured debrief means hard-won lessons stay in one person's head.</p>
         </div>
         <div class="icon-row-card highlight">
           <img src="assets/icon_star.png" class="pixel-art" alt="">
-          <p><b>These are exactly the constraints AI is built to solve.</b></p>
+          <p data-i18n="c6"><b>These are exactly the constraints AI is built to solve.</b></p>
         </div>
       </div>
       <div class="chest-art">
@@ -395,53 +409,53 @@ h2{color:var(--green);}
 <section class="agentic">
   <div class="wrap">
     <div class="section-head reveal">
-      <h2>3.The game changer! From generative to Agentic AI</h2>
+      <h2 data-i18n="h2-agentic">3.The game changer! From generative to Agentic AI</h2>
     </div>
     <div class="agentic-grid reveal">
       <div class="agentic-card">
         <img class="agentic-dot pixel-art" src="assets/icon_brain_gen.png" alt="">
-        <p><b>Generative AI responds:</b> you prompt it, it produces text, code, or analysis, then it stops.</p>
+        <p data-i18n="gen-ai"><b>Generative AI responds:</b> you prompt it, it produces text, code, or analysis, then it stops.</p>
       </div>
       <div class="agentic-card">
         <img class="agentic-dot pixel-art" src="assets/icon_brain_agent.png" alt="">
-        <p><b>Agentic AI acts:</b> given a goal, an agent plans the steps, uses tools, makes decisions, and executes a multi-step task on its own.</p>
+        <p data-i18n="agent-ai"><b>Agentic AI acts:</b> given a goal, an agent plans the steps, uses tools, makes decisions, and executes a multi-step task on its own.</p>
       </div>
     </div>
-    <p class="agentic-shift reveal">The shift is happening at unprecedented speed.</p>
+    <p class="agentic-shift reveal" data-i18n="shift">The shift is happening at unprecedented speed.</p>
     <div class="flow-row reveal">
       <div class="flow-item">
         <span class="ico-box"><img src="assets/flow_flask.png" class="pixel-art" alt=""></span>
-        <span class="flabel">Beyond pilot</span>
-        <span class="fdetail">Experimenting is over.</span>
+        <span class="flabel" data-i18n="flow1-label">Beyond pilot</span>
+        <span class="fdetail" data-i18n="flow1-detail">Experimenting is over.</span>
       </div>
       <span class="flow-arrow">→</span>
       <div class="flow-item">
         <span class="ico-box"><img src="assets/flow_castle.png" class="pixel-art" alt=""></span>
-        <span class="flabel">Production ready</span>
-        <span class="fdetail">AI is reliable, scalable, secure.</span>
+        <span class="flabel" data-i18n="flow2-label">Production ready</span>
+        <span class="fdetail" data-i18n="flow2-detail">AI is reliable, scalable, secure.</span>
       </div>
       <span class="flow-arrow">→</span>
       <div class="flow-item">
         <span class="ico-box"><img src="assets/flow_robot.png" class="pixel-art" alt=""></span>
-        <span class="flabel">Real business impact</span>
-        <span class="fdetail">Stronger results, measurable faster.</span>
+        <span class="flabel" data-i18n="flow3-label">Real business impact</span>
+        <span class="fdetail" data-i18n="flow3-detail">Stronger results, measurable faster.</span>
       </div>
       <span class="flow-arrow">→</span>
       <div class="flow-item">
         <span class="ico-box"><img src="assets/flow_people.png" class="pixel-art" alt=""></span>
-        <span class="flabel">Negotiation edge</span>
-        <span class="fdetail">Stronger teams, better outcomes.</span>
+        <span class="flabel" data-i18n="flow4-label">Negotiation edge</span>
+        <span class="fdetail" data-i18n="flow4-detail">Stronger teams, better outcomes.</span>
       </div>
       <span class="flow-arrow">→</span>
       <div class="flow-item">
         <span class="ico-box"><img src="assets/flow_chart.png" class="pixel-art" alt=""></span>
-        <span class="flabel">Compounding advantage</span>
-        <span class="fdetail">Every negotiation makes you better.</span>
+        <span class="flabel" data-i18n="flow5-label">Compounding advantage</span>
+        <span class="fdetail" data-i18n="flow5-detail">Every negotiation makes you better.</span>
       </div>
     </div>
     <div class="agentic-callout reveal">
       <img src="assets/icon_star.png" class="pixel-art" alt="">
-      <p>The question is no longer "if" but "how fast" — and negotiation is one of the high-value functions still untouched.</p>
+      <p data-i18n="callout1">The question is no longer "if" but "how fast" — and negotiation is one of the high-value functions still untouched.</p>
     </div>
   </div>
 </section>
@@ -451,32 +465,31 @@ h2{color:var(--green);}
 <section class="ladder">
   <div class="wrap">
     <div class="section-head reveal">
-      <h2>4. Where do you stand on the AI maturity ladder?</h2>
-      <p class="ladder-intro">There are basically six levels, to AI adoption: from simple prompting to team intelligence. Most teams sit between level 1 and 3 — rarely from lack of ambition, but from lack of a method to climb. The real value starts at level 3.</p>
+      <h2 data-i18n="h2-ladder">4. Where do you stand on the AI maturity ladder?</h2>
+      <p class="ladder-intro" data-i18n="ladder-intro">There are basically six levels, to AI adoption: from simple prompting to team intelligence. Most teams sit between level 1 and 3 — rarely from lack of ambition, but from lack of a method to climb. The real value starts at level 3.</p>
     </div>
     <div class="ladder-grid">
       <div>
         <table class="ladder-table reveal">
-          <thead><tr><th>Level</th><th>What it means</th><th>What it does</th></tr></thead>
+          <thead><tr><th data-i18n="th-level">Level</th><th data-i18n="th-means">What it means</th><th data-i18n="th-does">What it does</th></tr></thead>
           <tbody>
-            <tr><td class="badge-cell"><img src="assets/badge_6.png" class="pixel-art" alt="6"></td><td class="title-cell">Team intelligence</td><td class="desc-cell">A shared brain that learns from every negotiation, for every negotiator.</td></tr>
-            <tr><td class="badge-cell"><img src="assets/badge_5.png" class="pixel-art" alt="5"></td><td class="title-cell">Multi-agents</td><td class="desc-cell">Specialized agents coordinate on complex deals.</td></tr>
-            <tr><td class="badge-cell"><img src="assets/badge_4.png" class="pixel-art" alt="4"></td><td class="title-cell">Agents</td><td class="desc-cell">AI adapts and chains actions toward a goal.</td></tr>
-            <tr><td class="badge-cell"><img src="assets/badge_3.png" class="pixel-art" alt="3"></td><td class="title-cell">Automation</td><td class="desc-cell">Fixed-rule tasks run without you.</td></tr>
-            <tr><td class="badge-cell"><img src="assets/badge_2.png" class="pixel-art" alt="2"></td><td class="title-cell">Context engineering</td><td class="desc-cell">Giving AI memory so it doesn't start from zero.</td></tr>
-            <tr><td class="badge-cell"><img src="assets/badge_1.png" class="pixel-art" alt="1"></td><td class="title-cell">Prompt engineering</td><td class="desc-cell">Knowing how to ask AI the right way.</td></tr>
+            <tr><td class="badge-cell"><img src="assets/badge_6.png" class="pixel-art" alt="6"></td><td class="title-cell" data-i18n="row6-title">Team intelligence</td><td class="desc-cell" data-i18n="row6-desc">A shared brain that learns from every negotiation, for every negotiator.</td></tr>
+            <tr><td class="badge-cell"><img src="assets/badge_5.png" class="pixel-art" alt="5"></td><td class="title-cell" data-i18n="row5-title">Multi-agents</td><td class="desc-cell" data-i18n="row5-desc">Specialized agents coordinate on complex deals.</td></tr>
+            <tr><td class="badge-cell"><img src="assets/badge_4.png" class="pixel-art" alt="4"></td><td class="title-cell" data-i18n="row4-title">Agents</td><td class="desc-cell" data-i18n="row4-desc">AI adapts and chains actions toward a goal.</td></tr>
+            <tr><td class="badge-cell"><img src="assets/badge_3.png" class="pixel-art" alt="3"></td><td class="title-cell" data-i18n="row3-title">Automation</td><td class="desc-cell" data-i18n="row3-desc">Fixed-rule tasks run without you.</td></tr>
+            <tr><td class="badge-cell"><img src="assets/badge_2.png" class="pixel-art" alt="2"></td><td class="title-cell" data-i18n="row2-title">Context engineering</td><td class="desc-cell" data-i18n="row2-desc">Giving AI memory so it doesn't start from zero.</td></tr>
+            <tr><td class="badge-cell"><img src="assets/badge_1.png" class="pixel-art" alt="1"></td><td class="title-cell" data-i18n="row1-title">Prompt engineering</td><td class="desc-cell" data-i18n="row1-desc">Knowing how to ask AI the right way.</td></tr>
           </tbody>
         </table>
-       
       </div>
       <div class="ladder-art reveal">
         <img src="assets/ladder-illustration.jpg" alt="A world map showing competitors moving between locations, and a character climbing a staircase toward two trophies, with a six-level legend from preparing to team intelligence">
       </div>
     </div>
-     <div class="agentic-callout reveal">
-          <img src="assets/icon_star.png" class="pixel-art" alt="">
-          <p>Your clients, your suppliers, your competitors — are already moving fast. Do you? This isn't a someday bet anymore. The window is measured in months.</p>
-        </div>
+    <div class="agentic-callout reveal">
+      <img src="assets/icon_star.png" class="pixel-art" alt="">
+      <p data-i18n="callout2">Your clients, your suppliers, your competitors — are already moving fast. Do you? This isn't a someday bet anymore. The window is measured in months.</p>
+    </div>
   </div>
 </section>
 <hr class="divider">
@@ -484,33 +497,31 @@ h2{color:var(--green);}
 <!-- 7 LOSING -->
 <section class="losing">
   <div class="wrap">
-    <div class="section-head reveal is-visible">
-      <h2>5.Every deal you wait quietly leaks value the time is now
-</h2>
-      
+    <div class="section-head reveal">
+      <h2 data-i18n="h2-losing">5.Every deal you wait quietly leaks value the time is now</h2>
     </div>
     <div class="losing-grid reveal">
       <div class="losing-art">
-        <p class="losing-caption">The best time to build a negotiation edge was before your last deal.<br>The second best time is now.</p>
+        <p class="losing-caption" data-i18n="caption-left">The best time to build a negotiation edge was before your last deal.<br>The second best time is now.</p>
         <img src="assets/crop_char_coins.png" alt="A character standing on a floating platform with coins falling beside it">
       </div>
       <div class="losing-card">
-        <span class="sub-label">Three reasons not to wait</span>
+        <span class="sub-label" data-i18n="sub-label">Three reasons not to wait</span>
         <ul class="reasons">
-          <li><span class="n">1</span><div><b>The technology just crossed the threshold</b> — <span>autonomous agents are production-ready today, not a future bet.</span></div></li>
-          <li><span class="n">2</span><div><b>Your competitors, clients and suppliers are already moving</b> — <span>early movers set the new baseline.</span></div></li>
-          <li><span class="n">3</span><div><b>The cost of waiting is invisible but real</b> — <span>every unassisted negotiation leaves value on the table you never recover.</span></div></li>
+          <li><span class="n">1</span><div data-i18n="reason1"><b>The technology just crossed the threshold</b> — <span>autonomous agents are production-ready today, not a future bet.</span></div></li>
+          <li><span class="n">2</span><div data-i18n="reason2"><b>Your competitors, clients and suppliers are already moving</b> — <span>early movers set the new baseline.</span></div></li>
+          <li><span class="n">3</span><div data-i18n="reason3"><b>The cost of waiting is invisible but real</b> — <span>every unassisted negotiation leaves value on the table you never recover.</span></div></li>
         </ul>
-        <p class="reasons-closing"><b>Closing line:</b> <i>The best time to build a negotiation edge was before your last deal. The second best time is now.</i></p>
+        <p class="reasons-closing" data-i18n="closing-line"><b>Closing line:</b> <i>The best time to build a negotiation edge was before your last deal. The second best time is now.</i></p>
       </div>
       <div class="losing-art">
-        <p class="losing-caption eyebrow-style">Why you act now</p>
+        <p class="losing-caption eyebrow-style" data-i18n="caption-right">Why you act now</p>
         <img src="assets/crop_hourglass.png" alt="An hourglass with sand running out">
       </div>
     </div>
-    <div class="agentic-callout reveal is-visible">
+    <div class="agentic-callout reveal">
       <img src="assets/icon_star.png" class="pixel-art" alt="">
-      <p>It's not about replacing your negotiators. It's about making them sharper — before your competitors do.</p>
+      <p data-i18n="callout3">It's not about replacing your negotiators. It's about making them sharper — before your competitors do.</p>
     </div>
   </div>
 </section>
@@ -520,24 +531,24 @@ h2{color:var(--green);}
 <section class="final-cta" id="cta">
   <div class="wrap cta-grid">
     <div class="reveal">
-      <h2>6. Find your first win.</h2>
+      <h2 data-i18n="h2-cta">6. Find your first win.</h2>
       <div class="cta-perks">
         <div class="cta-perk">
           <img src="assets/icon_phone_new.png" class="pixel-art" alt="">
-          <p><b>Exploratory call</b>A short conversation. No prep needed. (30 min)</p>
+          <p data-i18n="perk1"><b>Exploratory call</b>A short conversation. No prep needed. (30 min)</p>
         </div>
         <div class="cta-perk">
           <img src="assets/icon_scroll.png" class="pixel-art" alt="">
-          <p><b>Free maturity diagnostic</b>Where you stand on negotiation maturity and AI readiness.</p>
+          <p data-i18n="perk2"><b>Free maturity diagnostic</b>Where you stand on negotiation maturity and AI readiness.</p>
         </div>
         <div class="cta-perk">
           <img src="assets/icon_target.png" class="pixel-art" alt="">
-          <p><b>Quick wins</b>Leave with practical next steps you can use immediately.</p>
+          <p data-i18n="perk3"><b>Quick wins</b>Leave with practical next steps you can use immediately.</p>
         </div>
       </div>
       <div class="hero-ctas">
-        <a href="https://assessement.wenego.fr/" class="btn btn-primary">Take the AI diagnostic</a>
-        <a href="https://contact-us.wenego.fr/" class="btn btn-secondary">Book a discovery call</a>
+        <a href="https://assessement.wenego.fr/" class="btn btn-primary" data-i18n="btn-diagnostic">Take the AI diagnostic</a>
+        <a href="https://contact-us.wenego.fr/" class="btn btn-secondary" data-i18n="btn-discovery">Book a discovery call</a>
       </div>
     </div>
     <div class="castle-art reveal"><img src="assets/castle-new.png" alt="A pixel-art castle on a hill with a red flag"></div>
@@ -548,12 +559,12 @@ h2{color:var(--green);}
 <section class="about-strip">
   <div class="wrap about-inner">
     <div class="about-text reveal">
-      <p>WeNego designs and delivers advanced negotiation workshops, coaching and consultancy for procurement, sales and commercial teams — turning negotiation into a repeatable, measurable skill with immediate ROI.</p>
+      <p data-i18n="about-text">WeNego designs and delivers advanced negotiation workshops, coaching and consultancy for procurement, sales and commercial teams — turning negotiation into a repeatable, measurable skill with immediate ROI.</p>
     </div>
     <div class="about-stat reveal">
-      <span class="num">15</span><span class="lbl">Years in negotiation</span>
+      <span class="num">15</span><span class="lbl" data-i18n="stat-label">Years in negotiation</span>
     </div>
-    <a href="https://www.wenego.fr/" target="_blank" rel="noopener" class="btn btn-secondary on-light reveal">Visit wenego.fr →</a>
+    <a href="https://www.wenego.fr/" target="_blank" rel="noopener" class="btn btn-secondary on-light reveal" data-i18n="visit-link">Visit wenego.fr →</a>
   </div>
 </section>
 
@@ -562,6 +573,84 @@ const obs = new IntersectionObserver((entries)=>{
   entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-visible'); obs.unobserve(e.target);} });
 },{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* ---- i18n ---- */
+const translations = { en:{}, fr:{
+  'hero-h1': 'Vos négociateurs<br>laissent de <span class="hl-orange">l\'argent</span><br>sur la table.',
+  'hero-sub': 'L\'IA peut vous aider à le récupérer.',
+  'btn-diagnostic': 'Faire le diagnostic IA',
+  'btn-discovery': 'Réserver un appel découverte',
+  'h2-issues': '1. Les problèmes que rencontrent vraiment les négociateurs',
+  'q1': 'Je ne trouve jamais <span class="hl">assez de temps</span> pour me préparer.',
+  'q2': 'Je ne <span class="hl">me souviens plus</span> de ce qu\'on avait convenu la dernière fois.',
+  'q3': 'Retrouver une information dans les e-mails <span class="hl">prend trop de temps</span>.',
+  'q4': 'J\'ai <span class="hl">trop de données</span> et pas assez de temps pour les analyser.',
+  'q5': 'Nous n\'avons pas de <span class="hl">méthodologie claire</span>.',
+  'q6': 'Mes équipes laissent de <span class="hl">la valeur sur la table</span> faute de structure.',
+  'q7': 'J\'aimerais <span class="hl">automatiser les tâches répétitives</span> de mes négociations.',
+  'sound-familiar': 'Ça vous parle ? Vous n\'êtes pas seul — et ce n\'est pas un problème de talent.',
+  'h2-structural': '2. La limite n\'est pas le talent, mais la structure',
+  'c1': '<b>La préparation est limitée par le temps</b>Une vraie préparation — contrepartie, marché, BATNA — prend des heures que les négociateurs n\'ont rarement.',
+  'c2': '<b>L\'asymétrie d\'information est permanente</b>L\'autre partie en sait souvent plus que vous.',
+  'c3': '<b>La charge cognitive atteint son pic au pire moment</b>Stratégie, tactique, émotion et calcul, tout en même temps, en direct.',
+  'c4': '<b>La coordination d\'équipe est difficile</b>L\'alignement n\'a pas lieu, ou coûte des réunions de suivi sans fin.',
+  'c5': '<b>Les apprentissages se cumulent rarement</b>Sans débrief structuré, les leçons durement acquises restent dans la tête d\'une seule personne.',
+  'c6': '<b>Ce sont exactement les contraintes que l\'IA est conçue pour résoudre.</b>',
+  'h2-agentic': '3. Le tournant\u00a0! De l\'IA générative à l\'IA agentique',
+  'gen-ai': '<b>L\'IA générative répond\u00a0:</b> vous la sollicitez, elle produit du texte, du code ou une analyse, puis elle s\'arrête.',
+  'agent-ai': '<b>L\'IA agentique agit\u00a0:</b> face à un objectif, un agent planifie les étapes, utilise des outils, prend des décisions et exécute seul une tâche à plusieurs étapes.',
+  'shift': 'Ce changement s\'opère à une vitesse sans précédent.',
+  'flow1-label': 'Au-delà du pilote', 'flow1-detail': 'Le temps de l\'expérimentation est terminé.',
+  'flow2-label': 'Prête pour la production', 'flow2-detail': 'L\'IA est fiable, scalable, sécurisée.',
+  'flow3-label': 'Impact business réel', 'flow3-detail': 'Des résultats plus forts, mesurables plus vite.',
+  'flow4-label': 'Avantage en négociation', 'flow4-detail': 'Des équipes plus fortes, de meilleurs résultats.',
+  'flow5-label': 'Avantage qui se cumule', 'flow5-detail': 'Chaque négociation vous rend meilleur.',
+  'callout1': 'La question n\'est plus «\u00a0si\u00a0» mais «\u00a0à quelle vitesse\u00a0» — et la négociation est l\'une des fonctions à forte valeur encore intactes.',
+  'h2-ladder': '4. Où en êtes-vous sur l\'échelle de maturité IA\u00a0?',
+  'ladder-intro': 'Il existe en tout six niveaux d\'adoption de l\'IA\u00a0: du simple prompt à l\'intelligence collective. La plupart des équipes se situent entre les niveaux 1 et 3 — rarement par manque d\'ambition, mais par manque de méthode pour progresser. La vraie valeur commence au niveau 3.',
+  'th-level': 'Niveau', 'th-means': 'Ce que ça signifie', 'th-does': 'Ce que ça fait',
+  'row6-title': 'Intelligence d\'équipe', 'row6-desc': 'Un cerveau partagé qui apprend de chaque négociation, pour chaque négociateur.',
+  'row5-title': 'Multi-agents', 'row5-desc': 'Des agents spécialisés se coordonnent sur des deals complexes.',
+  'row4-title': 'Agents', 'row4-desc': 'L\'IA s\'adapte et enchaîne les actions vers un objectif.',
+  'row3-title': 'Automatisation', 'row3-desc': 'Les tâches à règles fixes tournent sans vous.',
+  'row2-title': 'Ingénierie du contexte', 'row2-desc': 'Donner de la mémoire à l\'IA pour qu\'elle ne reparte jamais de zéro.',
+  'row1-title': 'Ingénierie du prompt', 'row1-desc': 'Savoir poser les bonnes questions à l\'IA.',
+  'callout2': 'Vos clients, vos fournisseurs, vos concurrents — bougent déjà vite. Et vous\u00a0? Ce n\'est plus un pari lointain. La fenêtre se compte en mois.',
+  'h2-losing': '5. Chaque deal que vous retardez perd discrètement de la valeur — c\'est maintenant',
+  'caption-left': 'Le meilleur moment pour construire un avantage en négociation, c\'était avant votre dernier deal.<br>Le deuxième meilleur moment, c\'est maintenant.',
+  'sub-label': 'Trois raisons de ne pas attendre',
+  'reason1': '<b>La technologie vient de franchir un cap</b> — <span>les agents autonomes sont prêts pour la production dès aujourd\'hui, ce n\'est plus un pari d\'avenir.</span>',
+  'reason2': '<b>Vos concurrents, clients et fournisseurs bougent déjà</b> — <span>les précurseurs fixent la nouvelle norme.</span>',
+  'reason3': '<b>Le coût de l\'attente est invisible mais bien réel</b> — <span>chaque négociation non assistée laisse sur la table une valeur que vous ne récupérerez jamais.</span>',
+  'closing-line': '<b>Phrase de clôture\u00a0:</b> <i>Le meilleur moment pour construire un avantage en négociation, c\'était avant votre dernier deal. Le deuxième meilleur moment, c\'est maintenant.</i>',
+  'caption-right': 'Pourquoi agir maintenant',
+  'callout3': 'Il ne s\'agit pas de remplacer vos négociateurs. Il s\'agit de les rendre plus affûtés — avant que vos concurrents ne le fassent.',
+  'h2-cta': '6. Trouvez votre première victoire.',
+  'perk1': '<b>Appel exploratoire</b>Une courte conversation. Aucune préparation nécessaire. (30 min)',
+  'perk2': '<b>Diagnostic de maturité gratuit</b>Où vous en êtes sur la maturité en négociation et la préparation à l\'IA.',
+  'perk3': '<b>Gains rapides</b>Repartez avec des prochaines étapes concrètes, applicables immédiatement.',
+  'about-text': 'WeNego conçoit et anime des ateliers de négociation avancés, du coaching et du conseil pour les équipes achats, ventes et commerciales — pour faire de la négociation une compétence reproductible et mesurable, avec un ROI immédiat.',
+  'stat-label': 'Ans en négociation',
+  'visit-link': 'Visiter wenego.fr →'
+}};
+
+document.querySelectorAll('[data-i18n]').forEach(el=>{
+  translations.en[el.dataset.i18n] = el.innerHTML;
+});
+
+function setLang(lang){
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.dataset.i18n;
+    if(translations[lang] && translations[lang][key]!==undefined) el.innerHTML = translations[lang][key];
+  });
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
+  try{ localStorage.setItem('wenego-lang', lang); }catch(e){}
+}
+
+let saved = 'en';
+try{ saved = localStorage.getItem('wenego-lang') || 'en'; }catch(e){}
+if(saved==='fr') setLang('fr');
 </script>
 </body>
 </html>

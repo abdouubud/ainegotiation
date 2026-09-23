@@ -252,19 +252,19 @@ h2{color:var(--green);}
 .ladder-art img{width:100%;}
 
 /* Losing */
-.losing-grid{display:grid;grid-template-columns:.7fr 1.6fr .7fr;gap:24px;align-items:center;margin-bottom:28px;}
+.losing-grid{display:grid;grid-template-columns:.7fr 1.6fr .7fr;gap:32px;align-items:start;margin-bottom:28px;}
 @media (max-width:900px){ .losing-grid{grid-template-columns:1fr;} }
 .losing-art img{width:100%;}
-.losing-caption{
-  font-family:'Inter',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.02em;
-  text-align:center;color:var(--ink);margin-bottom:10px;line-height:1.4;
+.col-label{
+  display:block;
+  font-family:'Inter',sans-serif;font-weight:700;font-size:.78rem;
+  letter-spacing:.03em;text-transform:uppercase;color:var(--green);
+  text-align:left;
+  padding-bottom:12px;margin:0 0 20px;
+  border-bottom:1.5px solid var(--card-border);
 }
-.losing-caption.eyebrow-style{color:var(--green);text-transform:uppercase;font-size:.78rem;}
-.losing-card{
-  background:#fff;border-radius:20px;padding:28px 26px;
-}
+.losing-card{background:#fff;padding:0;}
 .losing-card h2{font-size:clamp(.85rem,1.6vw,1.15rem);line-height:1.7;margin-bottom:12px;}
-.sub-label{font-family:'Inter',sans-serif;color:var(--green);font-size:.8rem;letter-spacing:.03em;text-transform:uppercase;display:block;margin:16px 0 14px;font-weight:700;}
 .reasons{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;}
 .reasons li{display:flex;gap:12px;align-items:flex-start;}
 .reasons .n{
@@ -502,20 +502,20 @@ h2{color:var(--green);}
     </div>
     <div class="losing-grid reveal">
       <div class="losing-art">
-       <span class="sub-label" data-i18n="sub-label">Stop leaking value</span>
+        <span class="col-label" data-i18n="stop-leaking">Stop leaking value</span>
         <img src="assets/crop_char_coins.png" alt="A character standing on a floating platform with coins falling beside it">
       </div>
       <div class="losing-card">
-        <span class="sub-label" data-i18n="sub-label">Three reasons not to wait</span>
+        <span class="col-label" data-i18n="sub-label">Three reasons not to wait</span>
         <ul class="reasons">
           <li><span class="n">1</span><div data-i18n="reason1"><b>The technology just crossed the threshold</b> — <span>autonomous agents are production-ready today, not a future bet.</span></div></li>
           <li><span class="n">2</span><div data-i18n="reason2"><b>Your competitors, clients and suppliers are already moving</b> — <span>early movers set the new baseline.</span></div></li>
           <li><span class="n">3</span><div data-i18n="reason3"><b>The cost of waiting is invisible but real</b> — <span>every unassisted negotiation leaves value on the table you never recover.</span></div></li>
         </ul>
-        <p class="reasons-closing" data-i18n="closing-line"> <i>The best time to build a negotiation edge was before your last deal. The second best time is now.</i></p>
+        <p class="reasons-closing" data-i18n="closing-line"><i>The best time to build a negotiation edge was before your last deal. The second best time is now.</i></p>
       </div>
       <div class="losing-art">
-        <p class="losing-caption eyebrow-style" data-i18n="caption-right">Why you act now</p>
+        <span class="col-label" data-i18n="caption-right">Why you act now</span>
         <img src="assets/crop_hourglass.png" alt="An hourglass with sand running out">
       </div>
     </div>
@@ -617,12 +617,12 @@ const translations = { en:{}, fr:{
   'row1-title': 'Ingénierie du prompt', 'row1-desc': 'Savoir poser les bonnes questions à l\'IA.',
   'callout2': 'Vos clients, vos fournisseurs, vos concurrents — bougent déjà vite. Et vous\u00a0? Ce n\'est plus un pari lointain. La fenêtre se compte en mois.',
   'h2-losing': '5. Chaque deal que vous retardez perd discrètement de la valeur — c\'est maintenant',
-  'caption-left': 'Le meilleur moment pour construire un avantage en négociation, c\'était avant votre dernier deal.<br>Le deuxième meilleur moment, c\'est maintenant.',
+  'stop-leaking': 'Arrêtez de perdre de la valeur',
   'sub-label': 'Trois raisons de ne pas attendre',
   'reason1': '<b>La technologie vient de franchir un cap</b> — <span>les agents autonomes sont prêts pour la production dès aujourd\'hui, ce n\'est plus un pari d\'avenir.</span>',
   'reason2': '<b>Vos concurrents, clients et fournisseurs bougent déjà</b> — <span>les précurseurs fixent la nouvelle norme.</span>',
   'reason3': '<b>Le coût de l\'attente est invisible mais bien réel</b> — <span>chaque négociation non assistée laisse sur la table une valeur que vous ne récupérerez jamais.</span>',
-  'closing-line': '<b>Phrase de clôture\u00a0:</b> <i>Le meilleur moment pour construire un avantage en négociation, c\'était avant votre dernier deal. Le deuxième meilleur moment, c\'est maintenant.</i>',
+  'closing-line': '<i>Le meilleur moment pour construire un avantage en négociation, c\'était avant votre dernier deal. Le deuxième meilleur moment, c\'est maintenant.</i>',
   'caption-right': 'Pourquoi agir maintenant',
   'callout3': 'Il ne s\'agit pas de remplacer vos négociateurs. Il s\'agit de les rendre plus affûtés — avant que vos concurrents ne le fassent.',
   'h2-cta': '6. Trouvez votre première victoire.',

@@ -398,7 +398,12 @@ h2{color:var(--green);}
         </div>
       </div>
       <div class="chest-art">
-        <img src="assets/chest-scene-new.jpg" alt="A knight looking at a castle with a glowing treasure chest, with the callout: how much money are you leaving on the table?">
+        <img src="assets/chest-scene-new.jpg"
+             data-src-en="assets/chest-scene-new.jpg"
+             data-src-fr="assets/chest-scene-new-fr.jpg"
+             data-alt-en="A knight looking at a castle with a glowing treasure chest, with the callout: how much money are you leaving on the table?"
+             data-alt-fr="Un chevalier regarde un château avec un coffre au trésor lumineux, avec la question : combien d'argent laissez-vous sur la table ?"
+             alt="A knight looking at a castle with a glowing treasure chest, with the callout: how much money are you leaving on the table?">
       </div>
     </div>
   </div>
@@ -576,8 +581,8 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
 /* ---- i18n ---- */
 const translations = { en:{}, fr:{
-  'hero-h1': 'Vos négociateurs<br>laissent de <span class="hl-orange">l\'argent</span><br>sur la table.',
-  'hero-sub': 'L\'IA peut vous aider à le récupérer.',
+  'hero-h1': 'Vos nEgociateurs<br>laissent de <span class="hl-orange">l\'argent</span><br>sur la table.',
+  'hero-sub': 'L\'IA peut vous <br>aider à le rEcupErer.',
   'btn-diagnostic': 'Faire le diagnostic IA',
   'btn-discovery': 'Réserver un appel découverte',
   'h2-issues': '1. Les problèmes que rencontrent vraiment les négociateurs',
@@ -590,13 +595,13 @@ const translations = { en:{}, fr:{
   'q7': 'J\'aimerais <span class="hl">automatiser les tâches répétitives</span> de mes négociations.',
   'sound-familiar': 'Ça vous parle ? Vous n\'êtes pas seul — et ce n\'est pas un problème de talent.',
   'h2-structural': '2. La limite n\'est pas le talent, mais la structure',
-  'c1': '<b>La préparation est limitée par le temps</b>Une vraie préparation — contrepartie, marché, BATNA — prend des heures que les négociateurs n\'ont rarement.',
+  'c1': '<b>La préparation est limitée par le temps</b>Une vraie préparation — contrepartie, marché, BATNA — prend des heures que les négociateurs ont rarement.',
   'c2': '<b>L\'asymétrie d\'information est permanente</b>L\'autre partie en sait souvent plus que vous.',
   'c3': '<b>La charge cognitive atteint son pic au pire moment</b>Stratégie, tactique, émotion et calcul, tout en même temps, en direct.',
   'c4': '<b>La coordination d\'équipe est difficile</b>L\'alignement n\'a pas lieu, ou coûte des réunions de suivi sans fin.',
   'c5': '<b>Les apprentissages se cumulent rarement</b>Sans débrief structuré, les leçons durement acquises restent dans la tête d\'une seule personne.',
   'c6': '<b>Ce sont exactement les contraintes que l\'IA est conçue pour résoudre.</b>',
-  'h2-agentic': '3. Le tournant\u00a0! De l\'IA générative à l\'IA agentique',
+  'h2-agentic': '3. Le tournant\u00a0! De l\'IA générative à l\'agentique',
   'gen-ai': '<b>L\'IA générative répond\u00a0:</b> vous la sollicitez, elle produit du texte, du code ou une analyse, puis elle s\'arrête.',
   'agent-ai': '<b>L\'IA agentique agit\u00a0:</b> face à un objectif, un agent planifie les étapes, utilise des outils, prend des décisions et exécute seul une tâche à plusieurs étapes.',
   'shift': 'Ce changement s\'opère à une vitesse sans précédent.',
@@ -609,14 +614,14 @@ const translations = { en:{}, fr:{
   'h2-ladder': '4. Où en êtes-vous sur l\'échelle de maturité IA\u00a0?',
   'ladder-intro': 'Il existe en tout six niveaux d\'adoption de l\'IA\u00a0: du simple prompt à l\'intelligence collective. La plupart des équipes se situent entre les niveaux 1 et 3 — rarement par manque d\'ambition, mais par manque de méthode pour progresser. La vraie valeur commence au niveau 3.',
   'th-level': 'Niveau', 'th-means': 'Ce que ça signifie', 'th-does': 'Ce que ça fait',
-  'row6-title': 'Intelligence d\'équipe', 'row6-desc': 'Un cerveau partagé qui apprend de chaque négociation, pour chaque négociateur.',
-  'row5-title': 'Multi-agents', 'row5-desc': 'Des agents spécialisés se coordonnent sur des deals complexes.',
-  'row4-title': 'Agents', 'row4-desc': 'L\'IA s\'adapte et enchaîne les actions vers un objectif.',
-  'row3-title': 'Automatisation', 'row3-desc': 'Les tâches à règles fixes tournent sans vous.',
-  'row2-title': 'Ingénierie du contexte', 'row2-desc': 'Donner de la mémoire à l\'IA pour qu\'elle ne reparte jamais de zéro.',
-  'row1-title': 'Ingénierie du prompt', 'row1-desc': 'Savoir poser les bonnes questions à l\'IA.',
-  'callout2': 'Vos clients, vos fournisseurs, vos concurrents — bougent déjà vite. Et vous\u00a0? Ce n\'est plus un pari lointain. La fenêtre se compte en mois.',
-  'h2-losing': '5. Chaque deal que vous retardez perd discrètement de la valeur — c\'est maintenant',
+  'row6-desc': 'Un cerveau partagé qui apprend de chaque négociation, pour chaque négociateur.',
+  'row5-desc': 'Des agents spécialisés se coordonnent sur des deals complexes.',
+  'row4-desc': 'L\'IA s\'adapte et enchaîne les actions vers un objectif.',
+  'row3-desc': 'Les tâches à règles fixes tournent sans vous.',
+  'row2-desc': 'Donner de la mémoire à l\'IA pour qu\'elle ne reparte jamais de zéro.',
+  'row1-desc': 'Savoir poser les bonnes questions à l\'IA.',
+  'callout2': 'Vos clients, vos fournisseurs, vos concurrents bougent déjà vite. Et vous\u00a0? <br>Ce n\'est plus un pari lointain. La fenêtre se compte en mois.',
+  'h2-losing': '5. Chaque deal que vous retardez perd de la valeur, c\'est maintenant',
   'stop-leaking': 'Arrêtez de perdre de la valeur',
   'sub-label': 'Trois raisons de ne pas attendre',
   'reason1': '<b>La technologie vient de franchir un cap</b> — <span>les agents autonomes sont prêts pour la production dès aujourd\'hui, ce n\'est plus un pari d\'avenir.</span>',
@@ -625,7 +630,7 @@ const translations = { en:{}, fr:{
   'closing-line': '<i>Le meilleur moment pour construire un avantage en négociation, c\'était avant votre dernier deal. Le deuxième meilleur moment, c\'est maintenant.</i>',
   'caption-right': 'Pourquoi agir maintenant',
   'callout3': 'Il ne s\'agit pas de remplacer vos négociateurs. Il s\'agit de les rendre plus affûtés — avant que vos concurrents ne le fassent.',
-  'h2-cta': '6. Trouvez votre première victoire.',
+  'h2-cta': '6. Trouvez votre victoire',
   'perk1': '<b>Appel exploratoire</b>Une courte conversation. Aucune préparation nécessaire. (30 min)',
   'perk2': '<b>Diagnostic de maturité gratuit</b>Où vous en êtes sur la maturité en négociation et la préparation à l\'IA.',
   'perk3': '<b>Gains rapides</b>Repartez avec des prochaines étapes concrètes, applicables immédiatement.',
@@ -642,6 +647,11 @@ function setLang(lang){
   document.querySelectorAll('[data-i18n]').forEach(el=>{
     const key = el.dataset.i18n;
     if(translations[lang] && translations[lang][key]!==undefined) el.innerHTML = translations[lang][key];
+  });
+  document.querySelectorAll('[data-src-'+lang+']').forEach(img=>{
+    img.src = img.getAttribute('data-src-'+lang);
+    const alt = img.getAttribute('data-alt-'+lang);
+    if(alt) img.alt = alt;
   });
   document.documentElement.lang = lang;
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));

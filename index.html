@@ -304,7 +304,7 @@ h2{color:var(--green);}
       <h1 data-i18n="hero-h1">Your negotiators<br>are leaving <span class="hl-orange">money</span><br>on the table.</h1>
       <p class="hero-sub" data-i18n="hero-sub">AI can help you <br><span class="hl-gold">capture</span> it back.</p>
       <div class="hero-ctas">
-        <a href="https://ai-assessment.wenego.fr/" class="btn btn-primary" data-i18n="btn-diagnostic">Your AI diagnostic</a>
+        <a href="https://ai-assessment.wenego.fr/" data-href-en="https://ai-assessment.wenego.fr/" data-href-fr="https://ai-assessment.wenego.fr/?lang=fr" class="btn btn-primary" data-i18n="btn-diagnostic">Your AI diagnostic</a>
         <a href="https://contact-us.wenego.fr/" class="btn btn-secondary" data-i18n="btn-discovery">Book a discovery call</a>
       </div>
     </div>
@@ -527,7 +527,7 @@ h2{color:var(--green);}
         </div>
       </div>
       <div class="hero-ctas">
-        <a href="https://ai-assessment.wenego.fr/" class="btn btn-primary" data-i18n="btn-diagnostic">Your AI diagnostic</a>
+        <a href="https://ai-assessment.wenego.fr/" data-href-en="https://ai-assessment.wenego.fr/" data-href-fr="https://ai-assessment.wenego.fr/?lang=fr" class="btn btn-primary" data-i18n="btn-diagnostic">Your AI diagnostic</a>
         <a href="https://contact-us.wenego.fr/" class="btn btn-secondary" data-i18n="btn-discovery">Book a discovery call</a>
       </div>
     </div>
@@ -628,6 +628,9 @@ function setLang(lang){
     img.src = img.getAttribute('data-src-'+lang);
     const alt = img.getAttribute('data-alt-'+lang);
     if(alt) img.alt = alt;
+  });
+  document.querySelectorAll('[data-href-'+lang+']').forEach(a=>{
+    a.href = a.getAttribute('data-href-'+lang);
   });
   document.documentElement.lang = lang;
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));

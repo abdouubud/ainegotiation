@@ -278,6 +278,25 @@ h2{color:var(--green);}
 .about-text p{margin:0;font-size:var(--fs-text);color:var(--ink-soft);}
 .about-stat .lbl{font-family:'Inter',sans-serif;font-size:var(--fs-text);color:var(--green);line-height:1.4;text-transform:uppercase;font-weight:700;letter-spacing:.02em;white-space:nowrap;}
 @media (max-width:700px){ .about-inner{flex-direction:column;align-items:flex-start;} }
+
+  /* Hero — stack image under the text on mobile */
+@media (max-width:640px){
+  .hero{
+    display:flex;
+    flex-direction:column;
+    padding:24px 0 0;
+  }
+  .hero .wrap{order:1;width:100%;}
+  .hero-bg{
+    position:relative;
+    inset:auto;
+    order:2;
+    height:260px;
+    margin-top:24px;
+  }
+  .hero-bg img{object-position:70% 50%;}
+  .hero-inner{max-width:100%;}
+}
 </style>
 </head>
 <body>

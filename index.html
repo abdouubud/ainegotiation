@@ -12,11 +12,11 @@
   --navy:#13213C;
   --navy-card:#1C2E52;
   --navy-deep:#0A1224;
-  --amber:#FCA311;
+  --amber:#C9A227;
   --periwinkle:#6A7FC0;
   --peri-light:#CDD4EA;
   --offwhite:#F2F1EF;
-  --gold:#D4AF37;
+  --gold:#C9A227;
   --red:#E90101;
 
   --ink:#13213C;
@@ -175,7 +175,7 @@ h2{color:var(--navy);}
 }
 .quote-card img{width:84px;height:84px;object-fit:contain;flex:0 0 auto;}
 .quote-card p{margin:0;font-size:var(--fs-text);font-weight:600;line-height:1.4;}
-.hl{font-weight:800;background:rgba(252,163,17,.35);padding:0 3px;border-radius:3px;}
+.hl{font-weight:800;background:rgba(201,162,39,.35);padding:0 3px;border-radius:3px;}
 .slider-arrow{
   position:absolute;top:50%;transform:translateY(-50%);
   width:40px;height:40px;border-radius:50%;border:1.5px solid var(--navy);
@@ -299,8 +299,15 @@ h2{color:var(--navy);}
 .about-card{
   background:var(--navy);border-radius:16px;padding:28px 32px;
   display:grid;grid-template-columns:minmax(0,1.5fr) auto minmax(0,1fr);
-  align-items:center;gap:32px;
+  align-items:center;gap:22px 32px;
 }
+.about-bottom{
+  grid-column:1 / -1;margin:0;padding-top:22px;
+  border-top:1px solid rgba(205,212,234,.22);
+  font-size:var(--fs-text);line-height:1.6;color:#fff;
+}
+.about-bottom a{color:var(--amber);font-weight:700;text-decoration:none;}
+.about-bottom a:hover{text-decoration:underline;}
 .about-text p{margin:0;font-size:var(--fs-text);line-height:1.75;color:#fff;}
 .about-stats{
   display:flex;flex-direction:column;gap:12px;
@@ -315,7 +322,7 @@ h2{color:var(--navy);}
   font-family:'Inter',sans-serif;font-weight:700;font-size:.95rem;
   text-transform:none;letter-spacing:0;padding:14px 26px;
 }
-.btn-amber:hover{background:#FDB43F;border-color:#FDB43F;}
+.btn-amber:hover{background:#D6B54A;border-color:#D6B54A;}
 
 @media (max-width:900px){
   .about-card{grid-template-columns:1fr;gap:22px;padding:24px 20px;}
@@ -604,6 +611,7 @@ h2{color:var(--navy);}
         </div>
       </div>
       <a href="https://www.wenego.fr/" target="_blank" rel="noopener" class="btn btn-amber about-cta" data-i18n="visit-link">Visit wenego.fr →</a>
+      <p class="about-bottom" data-i18n="about-bottom">Let's go deeper into your results in a free 30 min conversation and build your AI &amp; negotiation roadmap. Contact us at <a href="mailto:contact@wenego.fr">contact@wenego.fr</a></p>
     </div>
   </div>
 </section>
@@ -676,7 +684,8 @@ const translations = { en:{}, fr:{
   'stat1-label': 'En négociation',
   'stat2-label': 'Négociateurs formés',
   'stat3-label': 'Ateliers animés',
-  'visit-link': 'Visiter wenego.fr →'
+  'visit-link': 'Visiter wenego.fr →',
+  'about-bottom': 'Approfondissons vos résultats lors d\'un échange gratuit de 30 min et construisons votre feuille de route IA &amp; négociation. Contactez-nous à <a href="mailto:contact@wenego.fr">contact@wenego.fr</a>'
 }};
 
 document.querySelectorAll('[data-i18n]').forEach(el=>{
